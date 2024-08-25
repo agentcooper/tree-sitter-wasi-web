@@ -1,6 +1,5 @@
 package component:tree-sitter-wasi-web;
 
-/// An example world for the component to target.
 world example {
     export get-parse-tree: func(code: string) -> string;
     export get-ast: func(code: string) -> string;

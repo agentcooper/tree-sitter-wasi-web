@@ -1,4 +1,4 @@
-Example setup for compiling Rust code that depends on the unmodified [tree-sitter](https://crates.io/crates/tree-sitter) crate to web through WebAssembly (and WASI).
+Example setup for compiling Rust code that depends on an unmodified [tree-sitter](https://crates.io/crates/tree-sitter) crate to the web via WebAssembly (and WASI).
 
 https://agentcooper.github.io/tree-sitter-wasi-web/
 
