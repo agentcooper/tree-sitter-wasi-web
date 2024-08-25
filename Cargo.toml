@@ -1,0 +1,27 @@
+[package]
+name = "tree-sitter-wasi-web"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tree-sitter = "0.22"
+tree-sitter-javascript = "0.21"
+wit-bindgen-rt = { version = "0.30.0", features = ["bitflags"] }
+
+[lib]
+crate-type = ["cdylib"]
+
+[[bin]]
+name = "cli"
+
+[profile.release]
+codegen-units = 1
+opt-level = "s"
+debug = false
+strip = true
+lto = true
+
+[package.metadata.component]
+package = "component:tree-sitter-wasi-web"
+
+[package.metadata.component.dependencies]

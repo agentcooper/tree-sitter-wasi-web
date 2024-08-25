@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "scripts": {
+    "build-wasm": "jco transpile ../target/wasm32-wasip2/debug/tree_sitter_wasi_web.wasm -o generated",
+    "start": "npm run build-wasm && vite",
+    "build": "npm run build-wasm && vite build"
+  },
+  "dependencies": {
+    "@bytecodealliance/preview2-shim": "^0.16.4"
+  },
+  "devDependencies": {
+    "vite": "^5.4.1",
+    "@bytecodealliance/jco": "^1.4.0"
+  }
+}
