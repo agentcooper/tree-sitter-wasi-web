@@ -15,24 +15,56 @@
         padding: 0;
         overflow: hidden;
       }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      }
       .container {
         display: flex;
         height: 100%;
         padding: 10px;
       }
-      textarea {
-        width: 50%;
-        height: 100%;
-        padding: 10px;
+      .column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
         margin: 0 5px;
       }
+      h3 {
+        margin: 0 0 10px 0;
+        padding: 5px;
+        background-color: rgb(255, 204, 0);
+        text-align: center;
+      }
+      textarea {
+        flex: 1;
+        padding: 10px;
+        resize: none;
+      }
     </style>
-    <script type="module" crossorigin src="/tree-sitter-wasi-web/assets/index-DZeqNCZM.js"></script>
+    <script type="module" crossorigin src="/tree-sitter-wasi-web/assets/index-BfHsqO_V.js"></script>
   </head>
   <body>
     <div class="container">
-      <textarea id="input"></textarea>
-      <textarea id="output"></textarea>
+      <div class="column">
+        <h3>Input</h3>
+        <textarea id="input">
+function add(a, b) {
+  let result = a + b;
+  if (result > 10) {
+    return result * 2;
+  } else {
+    return result;
+  }
+}</textarea>
+      </div>
+      <div class="column">
+        <h3>Parse Tree</h3>
+        <textarea id="parse-tree" readonly>Loading...</textarea>
+      </div>
+      <div class="column">
+        <h3>AST</h3>
+        <textarea id="ast" readonly>Loading...</textarea>
+      </div>
     </div>
   </body>
 </html>
