@@ -1,5 +1,5 @@
 use parser::build_ast_node;
-use tree_sitter::{Parser, Tree};
+use tree_sitter::{Language, Parser, Tree};
 
 mod ast;
 mod parser;
@@ -19,8 +19,9 @@ pub fn get_ast(source_code: String) -> String {
 
 fn tree_sitter_parse_javascript(source_code: &str) -> Tree {
     let mut parser = Parser::new();
+    let language: Language = tree_sitter_javascript::LANGUAGE.into();
     parser
-        .set_language(&tree_sitter_javascript::language())
+        .set_language(&language)
         .expect("Error loading JavaScript grammar");
     let parsed = parser
         .parse(&source_code, None)
